@@ -14,7 +14,7 @@ import diadon.sms.logic.SmsRaw;
 public class printInterface {
    
 
-    public static void print(SmsRaw sr) {
+    public static void send(SmsRaw sr) {
         System.out.println(String.format("%s%s%s%s%s%s%s%s%s%s",sr.getSca(),sr.getPdu_type(),sr.getTp_mr(),sr.getTp_da(),sr.getTp_pid(),sr.getTp_dcs(),sr.getTp_vp(),sr.getTp_udl(),sr.getTp_udh(),sr.getTp_ud()));
        
     }
