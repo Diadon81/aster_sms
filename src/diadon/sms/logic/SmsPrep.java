@@ -32,7 +32,7 @@ public class SmsPrep {
         /* String format SCA + PDU_TYPE + TP_MR + TP_DA + TP_PID + TP_DCS + TP_VP + TP_UDL +TP_UDH+ TP_UD */
        if (s.getTextMessage().length()<70) {
          
-         smsRaw.add(new SmsRaw("00","01","00",String.format("%02x%s%s", s.getTelNum().length(),"91",convTelNum),"00","08","",String.format("%X", s.getTextMessage().length()*2),"",s.getTextMessage()));
+         smsRaw.add(new SmsRaw("00","01","00",String.format("%02x%s%s", s.getTelNum().length(),"91",convTelNum),"00","08","",String.format("%02X",s.getTextMessage().length()*2),"",s.getTextMessage()));
           
           
           return (smsRaw);
