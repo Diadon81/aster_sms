@@ -29,18 +29,20 @@ public class AsterSms {
     StackTraceElement[] stack = Thread.currentThread ().getStackTrace ();
     StackTraceElement main = stack[stack.length - 1];
     String mainClass = main.getClassName ();
-  //  if (args.length!=4) {
-    //       System.out.println("Use: "+mainClass+" <phone> \"message\" <asterisk path> <dongle_id>"); 
-    //       System.out.println("Example: AsterSms 71234567890 \"Hello world!\" /usr/sbin/asterisk dongle0");
-     //      System.exit(0);
-  //  }
+    if (args.length!=4) {
+           System.out.println("Use: "+mainClass+" <phone> \"message\" <asterisk path> <dongle_id>"); 
+           System.out.println();
+           System.out.println("Example: AsterSms 71234567890 \"Hello world!\" /usr/sbin/asterisk dongle0");
+           System.out.println();
+           System.exit(0);
+    }
 
-    //   Sms s=new Sms(args[0],args[1]);
-       Sms s=new Sms("79637108412","Test");
+    Sms s=new Sms(args[0],args[1]);
+ 
         List<SmsRaw> smsRaw=SmsPrep.getSmsPrep(s);
         smsRaw.forEach((sraw) -> {
-           // asteriskInterface.send(sraw,args[2],args[3]);
-           printInterface.send(sraw);
+           asteriskInterface.send(sraw,args[2],args[3]);
+          // printInterface.send(sraw);
         });
     }
     
