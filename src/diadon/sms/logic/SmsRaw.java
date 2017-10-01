@@ -206,7 +206,7 @@ public final class SmsRaw {
 
     StringBuilder sb = new StringBuilder();
     for (byte b : bytes) {
-        sb.append(String.format("%02X", b));
+        sb.append(String.format("%02x", b));
     }
 
     return sb.toString();

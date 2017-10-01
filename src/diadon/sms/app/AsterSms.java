@@ -3,6 +3,8 @@ import diadon.sms.interfaces.asteriskInterface;
 import diadon.sms.interfaces.printInterface;
 import diadon.sms.logic.*;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /*
@@ -22,9 +24,10 @@ public class AsterSms {
      */
     public static void main(String[] args) {
         String phone="";
-        String message="";
+      //  String message="";
         String asterisk="";
         String dongle="";
+        
         // TODO code application logic here
     StackTraceElement[] stack = Thread.currentThread ().getStackTrace ();
     StackTraceElement main = stack[stack.length - 1];
@@ -38,11 +41,13 @@ public class AsterSms {
     }
 
     Sms s=new Sms(args[0],args[1]);
- 
+
         List<SmsRaw> smsRaw=SmsPrep.getSmsPrep(s);
+        
         smsRaw.forEach((sraw) -> {
-           asteriskInterface.send(sraw,args[2],args[3]);
-          // printInterface.send(sraw);
+          
+          asteriskInterface.send(sraw,"/usr/sbin/asterisk","dongle0");
+            
         });
     }
     
