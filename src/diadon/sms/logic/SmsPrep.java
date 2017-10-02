@@ -19,7 +19,7 @@ public class SmsPrep {
         List<SmsRaw> smsRaw = new ArrayList<>();
         String telNum="";
         String convTelNum="";
-        String rawMessage="";
+        
         
        
         

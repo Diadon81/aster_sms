@@ -6,8 +6,6 @@
 package diadon.sms.logic;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -33,15 +31,15 @@ public final class SmsRaw {
 }
     public SmsRaw(String sca, String pdu_type, String tp_mr, String tp_da, String tp_pid, String tp_dcs, String tp_vp, String tp_udl, String tp_udh, String tp_ud) {
         setSca(sca);
-        setPdu_type(pdu_type);
-        setTp_mr(tp_mr);
-        setTp_da(tp_da);
-        setTp_pid(tp_pid);
-        setTp_dcs(tp_dcs);
-        setTp_vp(tp_vp);
-        setTp_udl(tp_udl);
-        setTp_udh(tp_udh);
-        setTp_ud(tp_ud);
+        setPduType(pdu_type);
+        setTpMr(tp_mr);
+        setTpDa(tp_da);
+        setTpPid(tp_pid);
+        setTpDcs(tp_dcs);
+        setTpVp(tp_vp);
+        setTpUdl(tp_udl);
+        setTpUdh(tp_udh);
+        setTpUd(tp_ud);
     }
    
     /**
@@ -61,131 +59,131 @@ public final class SmsRaw {
     /**
      * @return the pdu_type
      */
-    public String getPdu_type() {
+    public String getPduType() {
         return pdu_type;
     }
 
     /**
      * @param pdu_type the pdu_type to set
      */
-    public void setPdu_type(String pdu_type) {
+    public void setPduType(String pdu_type) {
         this.pdu_type = pdu_type;
     }
 
     /**
      * @return the tp_mr
      */
-    public String getTp_mr() {
+    public String getTpMr() {
         return tp_mr;
     }
 
     /**
      * @param tp_mr the tp_mr to set
      */
-    public void setTp_mr(String tp_mr) {
+    public void setTpMr(String tp_mr) {
         this.tp_mr = tp_mr;
     }
 
     /**
      * @return the tp_da
      */
-    public String getTp_da() {
+    public String getTpDa() {
         return tp_da;
     }
 
     /**
      * @param tp_da the tp_da to set
      */
-    public void setTp_da(String tp_da) {
+    public void setTpDa(String tp_da) {
         this.tp_da = tp_da;
     }
 
     /**
      * @return the tp_pid
      */
-    public String getTp_pid() {
+    public String getTpPid() {
         return tp_pid;
     }
 
     /**
      * @param tp_pid the tp_pid to set
      */
-    public void setTp_pid(String tp_pid) {
+    public void setTpPid(String tp_pid) {
         this.tp_pid = tp_pid;
     }
 
     /**
      * @return the tp_dcs
      */
-    public String getTp_dcs() {
+    public String getTpDcs() {
         return tp_dcs;
     }
 
     /**
      * @param tp_dcs the tp_dcs to set
      */
-    public void setTp_dcs(String tp_dcs) {
+    public void setTpDcs(String tp_dcs) {
         this.tp_dcs = tp_dcs;
     }
 
     /**
      * @return the tp_vp
      */
-    public String getTp_vp() {
+    public String getTpVp() {
         return tp_vp;
     }
 
     /**
      * @param tp_vp the tp_vp to set
      */
-    public void setTp_vp(String tp_vp) {
+    public void setTpVp(String tp_vp) {
         this.tp_vp = tp_vp;
     }
 
     /**
      * @return the tp_udl
      */
-    public String getTp_udl() {
+    public String getTpUdl() {
         return tp_udl;
     }
 
     /**
      * @param tp_udl the tp_udl to set
      */
-    public void setTp_udl(String tp_udl) {
+    public void setTpUdl(String tp_udl) {
         this.tp_udl = tp_udl;
     }
 
     /**
      * @return the tp_udh
      */
-    public String getTp_udh() {
+    public String getTpUdh() {
         return tp_udh;
     }
 
     /**
      * @param tp_udh the tp_udh to set
      */
-    public void setTp_udh(String tp_udh) {
+    public void setTpUdh(String tp_udh) {
         this.tp_udh = tp_udh;
     }
 
     /**
      * @return the tp_ud
      */
-    public String getTp_ud() {
+    public String getTpUd() {
       
         return tp_ud;
     }
     
-    public String getTp_ud_encoded(){
+    public String getTpUdEncoded(){
      return tp_ud;
     }
 
     /**
      * @param tp_ud the tp_ud to set
      */
-    public void setTp_ud(String tp_ud) {
+    public void setTpUd(String tp_ud) {
         
         try {
             
@@ -201,7 +199,7 @@ public final class SmsRaw {
     }
     
     
-    static String encodeUCS2HEX(String messageContent) throws UnsupportedEncodingException {
+    public static String encodeUCS2HEX(String messageContent) throws UnsupportedEncodingException {
     byte[] bytes = messageContent.getBytes("UTF-16BE");
 
     StringBuilder sb = new StringBuilder();
