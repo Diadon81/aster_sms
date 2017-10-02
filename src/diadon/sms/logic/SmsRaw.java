@@ -187,8 +187,8 @@ public final class SmsRaw {
         
         try {
             
-           tp_ud=encodeUCS2HEX(tp_ud);
-           this.tp_ud=tp_ud;
+            this.tp_ud=encodeUCS2HEX(tp_ud);
+            
         } catch (UnsupportedEncodingException e) {
             
             System.out.println("Error encode to UCS2");
